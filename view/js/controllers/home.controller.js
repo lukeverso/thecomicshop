@@ -13,7 +13,7 @@ app.controller("HomeController", function ($scope) {
                slideIndex = 1
           }
           slides[slideIndex - 1].style.display = "block";
-          setTimeout(showSlides, 10000);
+          setTimeout(showSlides, 5000);
      }
 
      $scope.catalogo = () => {
