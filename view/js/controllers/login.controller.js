@@ -10,18 +10,18 @@ app.controller("LoginController", function ($scope, $http) {
                .then((res) => {
                     let dados = res.data;
                     for (i = 0; i < dados.length; i++) {
+                         console.log(i)
                          if ($scope.usuario == dados[i].usuario) {
                               if ($scope.senha == dados[i].senha) {
                                    localStorage.setItem('Usuário', $scope.usuario);
                                    window.location = "#!/";
                               } else {
-                                   alert("Sua senha incorreta.")
+                                   alert("Sua senha está incorreta.")
                                    return;
                               }
                               return;
                          } else {
-                              alert("Usuário incorreto.")
-                              return;
+                              continue;
                          }
                     }
                })
