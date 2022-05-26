@@ -6,9 +6,10 @@
           <div class="itens-menu">
                <a ng-click="catalogo()">Catálogo geral</a>
                <a ng-click="categorias()">Categorias</a>
-               <a ng-click="faleConosco()">Fale conosco</a>
-               <a ng-click="login()"><span class="material-symbols-outlined">login</span> Fazer login</a>
+               <a ng-hide="user" ng-click="login()"><span class="material-symbols-outlined">login</span> Fazer login</a>
+               <a ng-show="user">{{ textoHeader }}</a>
                <a ng-click="carrinho()"><span class="material-symbols-outlined">shopping_cart</span> Carrinho</a>
+               <a ng-show="user" ng-click="logout()">Sair</a>
           </div>
      </div>
 </header>

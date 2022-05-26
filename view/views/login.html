@@ -1,2 +1,22 @@
 <div ng-include="'views/header.html'"></div>
 <div ng-include="'views/footer.html'"></div>
+<div class="login-main" ng-controller="LoginController">
+     <div class="login-box">
+          <h2>Entrar</h2>
+          <div class="login-inputs">
+               <div>
+                    <label>Usuário</label>
+                    <input type="text" ng-model="usuario" placeholder="Insira seu nome de usuário...">
+               </div>
+               <div>
+                    <label>Senha</label>
+                    <input type="password" ng-model="senha" placeholder="Insira sua senha...">
+               </div>
+          </div>
+          <div class="login-button" ng-click="login()"><span class="material-symbols-outlined espacoDireita">login</span> Entrar</div>
+          <div class="login-itens">
+               <strong>Não possui conta?</strong>
+               <div class="login-button" ng-click="criarConta()"><span class="material-symbols-outlined espacoDireita">person_add</span> Crie a sua</div>
+          </div>
+     </div>
+</div>

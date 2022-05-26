@@ -17,6 +17,10 @@ app.config(function ($routeProvider) {
           templateUrl: "views/login.html",
           controller: "LoginController"
      })
+     .when("/criarconta", {
+          templateUrl: "views/criarconta.html",
+          controller: "CriarContaController"
+     })
      .when("/catalogo", {
           templateUrl: "views/catalogo.html",
           controller: "CatalogoController"
@@ -24,10 +28,6 @@ app.config(function ($routeProvider) {
      .when("/categorias", {
           templateUrl: "views/categorias.html",
           controller: "CategoriasController"
-     })
-     .when("/faleconosco", {
-          templateUrl: "views/faleconosco.html",
-          controller: "FaleConoscoController"
      })
      .otherwise({
           templateUrl: "views/404.html",
