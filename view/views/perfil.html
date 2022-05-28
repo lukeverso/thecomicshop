@@ -1,2 +1,48 @@
 <div ng-include="'views/header.html'"></div>
 <div ng-include="'views/footer.html'"></div>
+<div class="login-main" ng-controller="CriarContaController">
+     <div class="perfil-box">
+          <h2>Editar perfil</h2>
+          <div class="perfil-inputs">
+               <div>
+                    <label>Nome completo</label>
+                    <input class="login-input" type="text" ng-model="user.nome"
+                         placeholder="Insira seu nome completo..." required>
+               </div>
+               <div>
+                    <label>Usuário</label>
+                    <input class="login-input" type="text" ng-model="user.usuario"
+                         placeholder="Insira seu nome de usuário..." required>
+               </div>
+               <div>
+                    <label>Senha</label>
+                    <input class="login-input" type="password" ng-model="user.senha1" placeholder="Insira sua nova senha..."
+                         required>
+               </div>
+               <div>
+                    <label>Repita a senha</label>
+                    <input class="login-input" type="password" ng-model="user.senha2" placeholder="Repita sua nova senha..."
+                         required>
+               </div>
+               <div>
+                    <label>E-mail</label>
+                    <input class="login-input" type="email" ng-model="user.email" placeholder="Insira seu e-mail..."
+                         required>
+               </div>
+               <div>
+                    <label>Telefone</label>
+                    <input class="login-input" type="tel" ng-model="user.telefone" placeholder="Insira seu telefone..."
+                         required>
+               </div>
+          </div>
+          <div style="margin-top: -10px; margin-bottom: 10px;" ng-show="senhasDiferentes" class="alertaSenha">
+               <span class="material-symbols-outlined espacoDireita">error</span>
+               As senhas inseridas<br> precisam ser iguais.
+          </div>
+          <div style="margin-top: -10px; margin-bottom: 10px;" ng-show="dadosAtualizados" class="alertaDadosAtualizados">
+               <span class="material-symbols-outlined espacoDireita">done</span>Dados atualizados!
+          </div>
+          <div style="margin: 0;" class="perfil-button" ng-click="atualizarDados()"><span
+                    class="material-symbols-outlined espacoDireita">sync</span> Atualizar dados</div>
+     </div>
+</div>

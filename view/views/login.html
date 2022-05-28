@@ -6,12 +6,24 @@
           <div class="login-inputs">
                <div>
                     <label>Usuário</label>
-                    <input type="text" ng-model="usuario" placeholder="Insira seu nome de usuário...">
+                    <input class="login-input" type="text" ng-model="usuario" placeholder="Insira seu nome de usuário...">
                </div>
                <div>
                     <label>Senha</label>
-                    <input type="password" ng-model="senha" placeholder="Insira sua senha...">
+                    <input class="login-input" type="password" ng-model="senha" placeholder="Insira sua senha...">
                </div>
+          </div>
+          <div style="margin-top: -5px;" ng-show="nadaPreenchido" class="alertaLogin">
+               <span class="material-symbols-outlined espacoDireita">error</span>Preencha os campos.
+          </div>
+          <div style="margin-top: -5px;" ng-show="senhaPreenchida" class="alertaLogin">
+               <span class="material-symbols-outlined espacoDireita">error</span>Insira seu usuário.
+          </div>
+          <div style="margin-top: -5px;" ng-show="usuarioPreenchido" class="alertaLogin">
+               <span class="material-symbols-outlined espacoDireita">error</span>Insira sua senha.
+          </div>
+          <div style="margin-top: -5px;" ng-show="senhaIncorreta" class="alertaLogin">
+               <span class="material-symbols-outlined espacoDireita">error</span>Senha incorreta.
           </div>
           <div class="login-button" ng-click="login()"><span class="material-symbols-outlined espacoDireita">login</span> Entrar</div>
           <div class="login-itens">

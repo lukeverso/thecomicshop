@@ -14,10 +14,17 @@ app.controller("HeaderController", function ($scope) {
      $scope.carrinho = () => {
           window.location = "#!/carrinho"
      }
+     $scope.editarPerfil = () => {
+          let id = localStorage.getItem('ID');
+          window.location = "#!/perfil/" + id;
+     }
+     $scope.criarProduto = () => {
+          window.location = "#!/criarproduto"
+     }
      $scope.user = localStorage.getItem('Usuário') ? localStorage.getItem('Usuário') : null;
-     $scope.textoHeader = 'Bem-vindo(a), ' + $scope.user;
      $scope.logout = () => {
           localStorage.removeItem('Usuário');
+          localStorage.removeItem('ID');
           window.location.reload(true);
      }
 })

@@ -5,7 +5,7 @@ app.config(function ($routeProvider) {
           templateUrl: "views/home.html",
           controller: "HomeController"
      })
-     .when("/perfil", {
+     .when("/perfil/:id", {
           templateUrl: "views/perfil.html",
           controller: "PerfilController"
      })
@@ -28,6 +28,10 @@ app.config(function ($routeProvider) {
      .when("/categorias", {
           templateUrl: "views/categorias.html",
           controller: "CategoriasController"
+     })
+     .when("/criarproduto", {
+          templateUrl: "views/criarproduto.html",
+          controller: "CriarProdutoController"
      })
      .otherwise({
           templateUrl: "views/404.html",
