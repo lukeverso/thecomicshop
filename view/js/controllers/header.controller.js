@@ -25,6 +25,7 @@ app.controller("HeaderController", function ($scope) {
      $scope.logout = () => {
           localStorage.removeItem('Usuário');
           localStorage.removeItem('ID');
+          window.location = '#!/login';
           window.location.reload(true);
      }
 })
