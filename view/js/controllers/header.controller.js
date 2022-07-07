@@ -18,8 +18,8 @@ app.controller("HeaderController", function ($scope) {
           let id = localStorage.getItem('ID');
           window.location = "#!/perfil/" + id;
      }
-     $scope.criarProduto = () => {
-          window.location = "#!/criarproduto"
+     $scope.meusAnuncios = () => {
+          window.location = "#!/meusanuncios"
      }
      $scope.user = localStorage.getItem('Usuário') ? localStorage.getItem('Usuário') : null;
      $scope.logout = () => {

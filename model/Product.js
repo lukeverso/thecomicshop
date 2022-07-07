@@ -5,8 +5,8 @@ const Product = mongoose.model('Product', {
      descricao: String,
      estado: {
           type: String,
-          enum: ['novo', 'usado'],
-          default: 'usado'
+          enum: ['Novo', 'Usado'],
+          default: 'Usado'
      },
      valor: Number,
      categoria: {
@@ -20,6 +20,10 @@ const Product = mongoose.model('Product', {
           default: 'Mensal'
      },
      ano_publicacao: Number,
+     // imagem: {
+     //      data: Buffer,
+     //      contentType: String
+     // }
 });
 
 module.exports = Product;

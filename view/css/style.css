@@ -1,6 +1,7 @@
 * {
      margin: 0;
      padding: 0;
+     box-sizing: border-box;
      font-family: "Rubik", sans-serif;
 }
 
@@ -27,7 +28,7 @@ header {
 
 .logo-menu {
      height: 70px;
-     width: 35%;
+     width: 30%;
      display: flex;
      justify-content: flex-start;
 }
@@ -41,7 +42,7 @@ header {
 
 .itens-menu {
      height: 70px;
-     width: 35%;
+     width: 40%;
      display: flex;
      justify-content: flex-end;
      align-items: center;
@@ -514,4 +515,19 @@ footer {
      display: flex;
      justify-content: center;
      align-items: center;
+}
+
+.botaoGeral {
+     min-width: 100px;
+     padding: 12px;
+     background-color: #f7b630;
+     border: none;
+     font-weight: bold;
+}
+
+.botaoGeral:hover {
+     background: black;
+     color: #f7b630;
+     font-weight: bold;
+     cursor: pointer;
 }

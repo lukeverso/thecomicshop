@@ -1,2 +1,73 @@
-<div ng-include="'views/header.html'"></div>
+<!-- <div ng-include="'views/header.html'"></div> -->
 <div ng-include="'views/footer.html'"></div>
+<div ng-controller="CriarProdutoController"
+     style="background-color: red; padding: 20px; width: 70%; height: 100vh; margin: 0 auto;">
+     <div style="width: 100%; margin: 0 auto; display: flex; flex-direction: column;">
+          <div style="display: flex; justify-content: space-between;">
+               <h1>
+                    Criar anúncio
+               </h1>
+               <button class="botaoGeral" ng-click="criarProduto()">
+                    Voltar
+               </button>
+          </div>
+          <div>
+               <div>
+                    <label>Nome do produto</label>
+                    <input class="login-input" type="text" ng-model="nomeProduto"
+                         placeholder="Digite o nome do produto..." required>
+               </div>
+               <div>
+                    <label>Descrição</label>
+                    <input class="login-input" type="text" ng-model="descricaoProduto"
+                         placeholder="Digite a descrição do produto..." required>
+               </div>
+               <div>
+                    <label>Estado</label>
+                    <select ng-model="estadoProduto">
+                         <option ng-repeat="estado in estados" value="{{ estado }}">
+                              {{ estado }}
+                         </option>
+                    </select>
+               </div>
+               <div>
+                    <label>Preço</label>
+                    <input class="login-input" type="text" ng-model="precoProduto"
+                         placeholder="Digite o preço do produto..." required>
+               </div>
+               <div>
+                    <label>Categoria</label>
+                    <select ng-model="categoriaProduto">
+                         <option ng-repeat="categoria in categorias" value="{{ categoria }}">
+                              {{ categoria }}
+                         </option>
+                    </select>
+               </div>
+               <div>
+                    <label>Formato</label>
+                    <select ng-model="formatoProduto">
+                         <option ng-repeat="formato in formatos" value="{{ formato }}">
+                              {{ formato }}
+                         </option>
+                    </select>
+               </div>
+               <div>
+                    <label>Ano de publicação</label>
+                    <input class="login-input" type="tel" ng-model="anoProduto" placeholder="Digite o ano do produto..."
+                         required>
+               </div>
+               <div>
+                    <label>Foto do produto</label>
+                    <input class="botaoGeral" type="file" ng-model="fotoProduto" required>
+               </div>
+          </div>
+          <div>
+               <button class="botaoGeral" ng-click="criarProduto()">
+                    <span class="material-symbols-outlined espacoDireita">
+                         add_circle
+                    </span>
+                    Criar produto
+               </button>
+          </div>
+     </div>
+</div>
