@@ -1,7 +1,7 @@
-<!-- <div ng-include="'views/header.html'"></div> -->
+<div ng-include="'views/header.html'"></div>
 <div ng-include="'views/footer.html'"></div>
 <div ng-controller="CriarProdutoController"
-     style="padding: 20px; width: 70%; height: 100vh; margin: 0 auto;">
+     style="padding: 100px 20px 0 20px; width: 30%; height: 100vh; margin: 0 auto;">
      <div style="width: 100%; margin: 0 auto; display: flex; flex-direction: column;">
           <div style="display: flex; justify-content: space-between;">
                <h1>
@@ -11,24 +11,24 @@
                     Voltar
                </button>
           </div>
-          <div>
-               <div>
+          <div style="display: flex; flex-direction: column; justify-content: space-between; margin: 25px 0;">
+               <div style="display: flex; justify-content: space-between; align-items: center;">
                     <label>Nome do produto</label>
                     <input class="login-input" type="text" ng-model="nomeProduto"
-                         placeholder="Digite o nome do produto..." required>
+                         placeholder="Nome" required>
                </div>
-               <div>
+               <div style="display: flex; justify-content: space-between; align-items: center;">
                     <label>Descrição</label>
                     <input class="login-input" type="text" ng-model="descricaoProduto"
-                         placeholder="Digite a descrição do produto..." required>
+                         placeholder="Descrição" required>
                </div>
-               <div>
+               <div style="display: flex; justify-content: space-between; align-items: center;">
                     <label>Preço</label>
                     <input class="login-input" type="number" ng-model="precoProduto"
-                         placeholder="Digite o preço do produto..." required>
+                         placeholder="Preço" required>
                </div>
           </div>
-          <div>
+          <div style="display: flex; justify-content: end;">
                <button class="botaoGeral" ng-click="criarProduto()">
                     <span class="material-symbols-outlined espacoDireita">
                          add_circle

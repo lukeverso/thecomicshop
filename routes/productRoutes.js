@@ -2,7 +2,7 @@ const router = require('express').Router();
 const Product = require('../model/Product');
 
 router.post('/', async (req, res) => {
-     const { nome, descricao, valor } = req.body;
+     const { nome, descricao, valor, id_vendedor, vendedor } = req.body;
      if (!nome) {
           res.status(422).json({
                error: 'O nome do produto é obrigatório.'
@@ -21,10 +21,18 @@ router.post('/', async (req, res) => {
           });
           return;
      };
+     if (!id_vendedor || !vendedor) {
+          res.status(422).json({
+               error: 'Impossível criar um produto sem uma conta.'
+          });
+          return;
+     };
      const product = {
           nome,
           descricao,
-          valor
+          valor,
+          id_vendedor,
+          vendedor
      };
      try {
           // Criando os dados...

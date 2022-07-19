@@ -1,29 +1,30 @@
 <div ng-include="'views/header.html'"></div>
 <div ng-include="'views/footer.html'"></div>
 <div class="main-container" ng-controller="HomeController">
-     <div class="line-container">
-          <div class="line">
-               <hr>
+     <div style="width: 70%; height: 100vh; margin: 0 auto; padding: 20px;">
+          <div style="display: flex; justify-content: space-between;">
+               <h1>
+                    Produtos
+               </h1>
           </div>
-          <span class="line-text">Produtos</span>
-          <div class="line">
-               <hr>
+          <div style="padding-top: 20px; margin: 0 auto;">
+               <ul style="list-style: none;" ng-repeat="produto in produtos">
+                    <li
+                         style="display: flex; justify-content: space-between; border: 1px solid #c9c9c9; border-radius: 10px; margin: 10px 0;">
+                         <div
+                              style="display: flex; flex: 1; flex-direction: column; margin: auto 0 auto 20px; gap: 20px;">
+                              <strong>
+                                   {{ produto.nome }} • R$ {{ produto.valor }} • {{ produto.descricao }} • Vendido por: {{ produto.vendedor }}
+                              </strong>
+                         </div>
+                         <div
+                              style="height: 80px; display: flex; justify-content: end; align-items: center; gap: 20px; margin-right: 20px;">
+                              <button class="botaoGeral" ng-click="comprar(produto._id)">
+                                   Comprar
+                              </button>
+                         </div>
+                    </li>
+               </ul>
           </div>
-     </div>
-     <div style="margin-top: 20px; width: 70%; margin: 0 auto;">
-          <ul style="list-style: none;">
-               <li style="display: flex; justify-content: space-between; border: 1px solid #c9c9c9; border-radius: 10px; margin: 10px 0;">
-                    <div style="display: flex; flex: 1; flex-direction: column; margin: auto 0 auto 20px; gap: 20px;">
-                         <strong>
-                              {{ produto.nome }} • R$ {{ produto.valor }} • {{ produto.descricao }}
-                         </strong>
-                    </div>
-                    <div style="width: 250px; height: 80px; display: flex; justify-content: center; align-items: center; gap: 20px;">
-                         <button class="botaoGeral" ng-click="editar(produto._id)">
-                              Comprar
-                         </button>
-                    </div>
-               </li>
-          </ul>
      </div>
 </div>

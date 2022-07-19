@@ -69,7 +69,7 @@ header {
 .main-container {
      display: block;
      width: 100%;
-     margin-top: 70px;
+     padding-top: 70px;
 }
 
 .mySlides {
@@ -426,7 +426,7 @@ footer {
 
 .perfil-box {
      width: 80%;
-     height: 700px;
+     height: 75%;
      margin: 0 auto;
      border: 1px solid #f7b630;
      display: flex;
@@ -494,6 +494,9 @@ footer {
      background-color: #f7b630;
      border: none;
      font-weight: bold;
+     display: flex;
+     align-items: center;
+     justify-content: center;
 }
 
 .botaoGeral:hover {

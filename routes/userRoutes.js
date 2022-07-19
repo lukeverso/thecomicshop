@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const User = require('../model/User');
 
-router.post('/', async (req, res) => {
+router.post('/create', async (req, res) => {
      const { usuario, senha } = req.body;
      if (!usuario) {
           res.status(422).json({

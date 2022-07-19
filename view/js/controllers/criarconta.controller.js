@@ -26,7 +26,7 @@ app.controller("CriarContaController", function ($scope, $http) {
                usuario: $scope.usuario,
                senha: $scope.senha1,
           };
-          $http.post('/user', usuario)
+          $http.post('/user/create', usuario)
                .then(() => {
                     alert("Sua conta foi criada com sucesso!");
                     window.location = "#!/login";
