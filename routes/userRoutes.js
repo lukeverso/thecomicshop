@@ -2,13 +2,7 @@ const router = require('express').Router();
 const User = require('../model/User');
 
 router.post('/', async (req, res) => {
-     const { nome, usuario, senha, email, telefone } = req.body;
-     if (!nome) {
-          res.status(422).json({
-               error: 'O nome é obrigatório.'
-          });
-          return;
-     };
+     const { usuario, senha } = req.body;
      if (!usuario) {
           res.status(422).json({
                error: 'O usuário é obrigatório.'
@@ -21,24 +15,9 @@ router.post('/', async (req, res) => {
           });
           return;
      };
-     if (!email) {
-          res.status(422).json({
-               error: 'O e-mail é obrigatório.'
-          });
-          return;
-     };
-     if (!telefone) {
-          res.status(422).json({
-               error: 'O telefone é obrigatório.'
-          });
-          return;
-     };
      const user = {
-          nome,
           usuario,
-          senha,
-          email,
-          telefone
+          senha
      };
      try {
           // Criando os dados...
@@ -86,13 +65,10 @@ router.get('/:id', async (req, res) => {
 
 router.patch('/:id', async (req, res) => {
      const id = req.params.id;
-     const { nome, usuario, senha, email, telefone } = req.body;
+     const { usuario, senha } = req.body;
      const user = {
-          nome,
           usuario,
-          senha,
-          email,
-          telefone
+          senha
      };
      try {
           const dadosAtualizados = await User.updateOne({

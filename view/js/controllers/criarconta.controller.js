@@ -1,12 +1,8 @@
 app.controller("CriarContaController", function ($scope, $http) {
      $scope.criarConta = () => {
           // Primeiro conferir os dados
-          if (!$scope.nome && !$scope.usuario && !$scope.senha1 && !$scope.senha2 && !$scope.email && !$scope.telefone) {
+          if (!$scope.usuario && !$scope.senha1 && !$scope.senha2) {
                alert("Preencha os campos.");
-               return;
-          }
-          if (!$scope.nome) {
-               alert("Insira seu nome.");
                return;
           };
           if (!$scope.usuario) {
@@ -25,21 +21,10 @@ app.controller("CriarContaController", function ($scope, $http) {
                alert("As senhas digitadas precisam ser iguais.");
                return;
           };
-          if (!$scope.email) {
-               alert("Insira seu e-mail.");
-               return;
-          };
-          if (!$scope.telefone) {
-               alert("Insira seu telefone.");
-               return;
-          };
           // Se tudo estiver certo, enviar objeto para o banco...
           let usuario = {
-               nome: $scope.nome,
                usuario: $scope.usuario,
                senha: $scope.senha1,
-               email: $scope.email,
-               telefone: $scope.telefone
           };
           $http.post('/user', usuario)
                .then(() => {

@@ -1,23 +1,6 @@
 <div ng-include="'views/header.html'"></div>
 <div ng-include="'views/footer.html'"></div>
 <div class="main-container" ng-controller="HomeController">
-     <div class="banner-container">
-          <div class="mySlides fade">
-               <img src="images/Banner - Monstro do Pântano.png" alt="Monstro do Pântano" />
-          </div>
-          <div class="mySlides fade">
-               <img src="images/Banner - Spider-Man Collection.png" alt="Spider-Man Collection" />
-          </div>
-          <div class="mySlides fade">
-               <img src="images/Banner - Batman Eterno.png" alt="Batman Eterno" />
-          </div>
-          <div class="mySlides fade">
-               <img src="images/Banner - Hikaru no Go.png" alt="Hikaru no Go" />
-          </div>
-          <div class="mySlides fade">
-               <img src="images/Banner - Universo Marvel.png" alt="Universo Marvel" />
-          </div>
-     </div>
      <div class="line-container">
           <div class="line">
                <hr>
@@ -27,77 +10,20 @@
                <hr>
           </div>
      </div>
-     <div class="boxes-container">
-          <div class="boxes">
-               <div class="box-individual">
-                    <div class="box-imagem">
-                         <img src="images/Caixa - Lanterna Verde.png" />
+     <div style="margin-top: 20px; width: 70%; margin: 0 auto;">
+          <ul style="list-style: none;">
+               <li style="display: flex; justify-content: space-between; border: 1px solid #c9c9c9; border-radius: 10px; margin: 10px 0;">
+                    <div style="display: flex; flex: 1; flex-direction: column; margin: auto 0 auto 20px; gap: 20px;">
+                         <strong>
+                              {{ produto.nome }} • R$ {{ produto.valor }} • {{ produto.descricao }}
+                         </strong>
                     </div>
-                    <div class="box-titulo">Lanterna Verde por Grant Morrison</div>
-                    <div class="box-preco">R$ 22,00</div>
-                    <div class="box-div div-button"><span class="material-symbols-outlined">shopping_cart</span> Comprar</div>
-               </div>
-               <div class="box-individual">
-                    <div class="box-imagem">
-                         <img src="images/Caixa - Guardiões da Galáxia.png" />
+                    <div style="width: 250px; height: 80px; display: flex; justify-content: center; align-items: center; gap: 20px;">
+                         <button class="botaoGeral" ng-click="editar(produto._id)">
+                              Comprar
+                         </button>
                     </div>
-                    <div class="box-titulo">Guardiões da Galáxia (Nova Marvel)</div>
-                    <div class="box-preco">R$ 22,00</div>
-                    <div class="box-div div-button"><span class="material-symbols-outlined">shopping_cart</span> Comprar</div>
-               </div>
-               <div class="box-individual">
-                    <div class="box-imagem">
-                         <img src="images/Caixa - Aquaman.png" />
-                    </div>
-                    <div class="box-titulo">Aquaman (DC Renascimento)</div>
-                    <div class="box-preco">R$ 22,00</div>
-                    <div class="box-div div-button"><span class="material-symbols-outlined">shopping_cart</span> Comprar</div>
-               </div>
-               <div class="box-individual">
-                    <div class="box-imagem">
-                         <img src="images/Caixa - A Espada Selvagem de Conan.png" />
-                    </div>
-                    <div class="box-titulo">A Espada Selvagem de Conan</div>
-                    <div class="box-preco">R$ 22,00</div>
-                    <div class="box-div div-button"><span class="material-symbols-outlined">shopping_cart</span> Comprar</div>
-               </div>
-          </div>
-          <div class="ver-mais">
-               <div ng-click="catalogo()" class="div-button"><span class="material-symbols-outlined">add</span> Ver mais</div>
-          </div>
-     </div>
-     <div class="line-container">
-          <div class="line">
-               <hr>
-          </div>
-          <span class="line-text">Categorias</span>
-          <div class="line">
-               <hr>
-          </div>
-     </div>
-     <div class="categorias-container">
-          <div class="categorias">
-               <div class="categoria-individual">
-                    <div class="categoria-imagem">
-                         <img src="images/marvel.jpg" />
-                    </div>
-                    <div class="categoria-titulo">Marvel</div>
-               </div>
-               <div class="categoria-individual">
-                    <div class="categoria-imagem">
-                         <img src="images/dc-comics.jpg" />
-                    </div>
-                    <div class="categoria-titulo">DC Comics</div>
-               </div>
-               <div class="categoria-individual">
-                    <div class="categoria-imagem">
-                         <img src="images/mangas.jpg" />
-                    </div>
-                    <div class="categoria-titulo">Mangás</div>
-               </div>
-          </div>
-          <div class="ver-mais">
-               <div ng-click="categorias()" class="div-button"><span class="material-symbols-outlined">add</span> Ver mais</div>
-          </div>
+               </li>
+          </ul>
      </div>
 </div>

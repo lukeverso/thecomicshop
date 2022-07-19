@@ -25,10 +25,6 @@ app.config(function ($routeProvider) {
           templateUrl: "views/catalogo.html",
           controller: "CatalogoController"
      })
-     .when("/categorias", {
-          templateUrl: "views/categorias.html",
-          controller: "CategoriasController"
-     })
      .when("/meusanuncios", {
           templateUrl: "views/anuncios.html",
           controller: "AnunciosController"

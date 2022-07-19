@@ -11,99 +11,18 @@
                </button>
           </div>
           <div style="margin-top: 20px;">
-               <ul style="list-style: none;">
+               <ul style="list-style: none;" ng-repeat="produto in produtos">
                     <li style="display: flex; justify-content: space-between; border: 1px solid #c9c9c9; border-radius: 10px; margin: 10px 0;">
-                         <div style="width: 250px; height: 250px; display: flex; justify-content: center; padding: 25px;">
-                              <img src="../images/Caixa - Lanterna Verde.png" alt="Caixa Lanterna Verde" style="height: auto; width: auto" />
+                         <div style="display: flex; flex: 1; flex-direction: column; margin: auto 0 auto 20px; gap: 20px;">
+                              <strong>
+                                   {{ produto.nome }} • R$ {{ produto.valor }} • {{ produto.descricao }}
+                              </strong>
                          </div>
-                         <div style="display: flex; flex-direction: column; margin: auto 0 auto 20px; gap: 20px;">
-                              <span>
-                                   Bota Timberland Confort Masculino - Tamanho 39
-                              </span>
-                              <span>
-                                   R$ 150,00
-                              </span>
-                              <span>
-                                   13/01/21 às 20h40
-                              </span>
-                         </div>
-                         <div style="width: 250px; height: 250px; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 20px;">
-                              <button class="botaoGeral">
+                         <div style="width: 250px; height: 80px; display: flex; justify-content: center; align-items: center; gap: 20px;">
+                              <button class="botaoGeral" ng-click="editar(produto._id)">
                                    Editar
                               </button>
-                              <button class="botaoGeral">
-                                   Excluir
-                              </button>
-                         </div>
-                    </li>
-                    <li style="display: flex; justify-content: space-between; border: 1px solid #c9c9c9; border-radius: 10px; margin: 10px 0;">
-                         <div style="width: 250px; height: 250px; display: flex; justify-content: center; padding: 25px;">
-                              <img src="../images/Caixa - Lanterna Verde.png" alt="Caixa Lanterna Verde" style="height: auto; width: auto" />
-                         </div>
-                         <div style="display: flex; flex-direction: column; margin: auto 0 auto 20px; gap: 20px;">
-                              <span>
-                                   Bota Timberland Confort Masculino - Tamanho 39
-                              </span>
-                              <span>
-                                   R$ 150,00
-                              </span>
-                              <span>
-                                   13/01/21 às 20h40
-                              </span>
-                         </div>
-                         <div style="width: 250px; height: 250px; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 20px;">
-                              <button class="botaoGeral">
-                                   Editar
-                              </button>
-                              <button class="botaoGeral">
-                                   Excluir
-                              </button>
-                         </div>
-                    </li>
-                    <li style="display: flex; justify-content: space-between; border: 1px solid #c9c9c9; border-radius: 10px; margin: 10px 0;">
-                         <div style="width: 250px; height: 250px; display: flex; justify-content: center; padding: 25px;">
-                              <img src="../images/Caixa - Lanterna Verde.png" alt="Caixa Lanterna Verde" style="height: auto; width: auto" />
-                         </div>
-                         <div style="display: flex; flex-direction: column; margin: auto 0 auto 20px; gap: 20px;">
-                              <span>
-                                   Bota Timberland Confort Masculino - Tamanho 39
-                              </span>
-                              <span>
-                                   R$ 150,00
-                              </span>
-                              <span>
-                                   13/01/21 às 20h40
-                              </span>
-                         </div>
-                         <div style="width: 250px; height: 250px; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 20px;">
-                              <button class="botaoGeral">
-                                   Editar
-                              </button>
-                              <button class="botaoGeral">
-                                   Excluir
-                              </button>
-                         </div>
-                    </li>
-                    <li style="display: flex; justify-content: space-between; border: 1px solid #c9c9c9; border-radius: 10px; margin: 10px 0;">
-                         <div style="width: 250px; height: 250px; display: flex; justify-content: center; padding: 25px;">
-                              <img src="../images/Caixa - Lanterna Verde.png" alt="Caixa Lanterna Verde" style="height: auto; width: auto" />
-                         </div>
-                         <div style="display: flex; flex-direction: column; margin: auto 0 auto 20px; gap: 20px;">
-                              <span>
-                                   Bota Timberland Confort Masculino - Tamanho 39
-                              </span>
-                              <span>
-                                   R$ 150,00
-                              </span>
-                              <span>
-                                   13/01/21 às 20h40
-                              </span>
-                         </div>
-                         <div style="width: 250px; height: 250px; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 20px;">
-                              <button class="botaoGeral">
-                                   Editar
-                              </button>
-                              <button class="botaoGeral">
+                              <button class="botaoGeral" ng-click="excluir(produto._id)">
                                    Excluir
                               </button>
                          </div>
