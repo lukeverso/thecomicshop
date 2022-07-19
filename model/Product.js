@@ -28,6 +28,10 @@ const Product = mongoose.model('Product', {
      vendido: {
           type: Boolean,
           default: false
+     },
+     vendidoPara: {
+          type: String,
+          default: ''
      }
 });
 

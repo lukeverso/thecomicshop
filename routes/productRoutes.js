@@ -81,7 +81,7 @@ router.get('/:id', async (req, res) => {
 router.delete('/:id', async (req, res) => {
      const id = req.params.id;
      try {
-          const product = await Product.findByIdAndDelete({
+          await Product.findByIdAndDelete({
                _id: id
           });
           if (!product) {
@@ -97,5 +97,21 @@ router.delete('/:id', async (req, res) => {
           })
      }
 });
+
+router.put('/sold/:id', async (req, res) => {
+     const id = req.params.id;
+     try {
+          await Product.findByIdAndUpdate({
+               id: id,
+               update: {
+                    vendido: true
+               }
+          })
+     } catch (error) {
+          res.status(500).json({
+               error: error
+          })
+     }
+})
 
 module.exports = router;
