@@ -84,13 +84,9 @@ router.delete('/:id', async (req, res) => {
           await Product.findByIdAndDelete({
                _id: id
           });
-          if (!product) {
-               res.status(422).json({
-                    message: 'Produto não encontrado.'
-               });
-               return;
-          }
-          res.status(200).json(product);
+          res.status(200).json({
+               message: 'Deletado com sucesso.'
+          });
      } catch (error) {
           res.status(500).json({
                error: error
@@ -104,6 +100,26 @@ router.put('/sold/:id', (req, res) => {
           {
                vendido: true,
                vendidoPara: req.body.comprador
+          },
+          (err) => {
+               if (err) {
+                    res.send(err)
+               } else {
+                    res.status(200).json({
+                         message: 'Produto vendido.'
+                    })
+               }
+          }
+     )
+})
+
+router.put('/:id', (req, res) => {
+     Product.findByIdAndUpdate(
+          req.params.id,
+          {
+               nome: req.body.nome,
+               descricao: req.body.descricao,
+               valor: req.body.valor
           },
           (err) => {
                if (err) {

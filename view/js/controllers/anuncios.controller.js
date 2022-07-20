@@ -19,7 +19,7 @@ app.controller("AnunciosController", function ($scope, $http) {
           })
 
      $scope.editar = (id) => {
-          console.log(id)
+          window.location = '#!/criarproduto/' + id;
      }
 
      $scope.excluir = (id) => {

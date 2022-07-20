@@ -15,17 +15,17 @@
                <div style="display: flex; justify-content: space-between; align-items: center;">
                     <label>Nome do produto</label>
                     <input class="login-input" type="text" ng-model="nomeProduto"
-                         placeholder="Nome" required>
+                         ng-value="editaveis.nome ? editaveis.nome : nomeProduto" placeholder="Nome" required>
                </div>
                <div style="display: flex; justify-content: space-between; align-items: center;">
                     <label>Descrição</label>
                     <input class="login-input" type="text" ng-model="descricaoProduto"
-                         placeholder="Descrição" required>
+                         ng-value="editaveis.descricao ? editaveis.descricao : descricaoProduto" placeholder="Descrição" required>
                </div>
                <div style="display: flex; justify-content: space-between; align-items: center;">
                     <label>Preço</label>
                     <input class="login-input" type="number" ng-model="precoProduto"
-                         placeholder="Preço" required>
+                         ng-value="editaveis.valor ? editaveis.valor : precoProduto" placeholder="Preço" required>
                </div>
           </div>
           <div style="display: flex; justify-content: end;">
