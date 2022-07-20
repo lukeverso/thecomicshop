@@ -7,7 +7,9 @@ app.controller("MinhasComprasController", function ($scope, $http) {
                let meusPedidos = [];
                for (i = 0; i < res.data.length; i++) {
                     if (res.data[i].vendido == true) {
-                         meusPedidos.push(res.data[i])
+                         if (res.data[i].vendidoPara == userID) {
+                              meusPedidos.push(res.data[i])
+                         }
                     }
                }
                $scope.pedidos = meusPedidos;
