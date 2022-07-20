@@ -21,6 +21,25 @@ app.controller("CarrinhoController", function ($scope, $http) {
                }
                $scope.pedidos = meusPedidos;
           })
+          .catch((error) => {
+               console.log(error)
+          });
 
-     
+     $scope.finish = () => {
+          let data = {
+               comprador: userID
+          }
+          for (i = 0; i < carrinho.length; i++) {
+               let id = carrinho[i];
+               $http.put('/product/sold/' + id, data)
+                    .then((res) => {
+                         console.log(res);
+                         localStorage.removeItem('carrinho');
+                         window.location = '#!/minhascompras'
+                    })
+                    .catch((error) => {
+                         console.log(error)
+                    });
+          }
+     }
 })

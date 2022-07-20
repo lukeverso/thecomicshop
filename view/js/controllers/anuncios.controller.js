@@ -27,5 +27,8 @@ app.controller("AnunciosController", function ($scope, $http) {
                .then(() => {
                     window.location.reload();
                })
+               .catch((error) => {
+                    console.log(error)
+               });
      }
 })

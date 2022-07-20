@@ -2,9 +2,6 @@ app.controller("HeaderController", function ($scope) {
      $scope.home = () => {
           window.location = "#!/"
      }
-     $scope.catalogo = () => {
-          window.location = "#!/catalogo"
-     }
      $scope.categorias = () => {
           window.location = "#!/categorias"
      }
@@ -21,12 +18,15 @@ app.controller("HeaderController", function ($scope) {
      $scope.meusAnuncios = () => {
           window.location = "#!/meusanuncios"
      }
-     $scope.user = localStorage.getItem('Usuário') ? localStorage.getItem('Usuário') : null;
+     $scope.minhasCompras = () => {
+          window.location = "#!/minhascompras"
+     }
+     $scope.user = localStorage.getItem('Usuário') ? localStorage.getItem('Usuário') : '';
      $scope.logout = () => {
           localStorage.removeItem('Usuário');
           localStorage.removeItem('ID');
           localStorage.removeItem('carrinho');
-          window.location = '#!/login';
+          window.location = '#!/';
           window.location.reload(true);
      }
 })

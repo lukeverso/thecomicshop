@@ -2,18 +2,8 @@
 <div ng-include="'views/footer.html'"></div>
 <div class="login-main" ng-controller="CriarContaController">
      <div class="perfil-box">
-          <h2>Editar perfil</h2>
+          <h2>Trocar senha</h2>
           <div class="perfil-inputs">
-               <div>
-                    <label>Nome completo</label>
-                    <input class="login-input" type="text" ng-model="user.nome"
-                         placeholder="Insira seu nome completo..." required>
-               </div>
-               <div>
-                    <label>Usuário</label>
-                    <input class="login-input" type="text" ng-model="user.usuario"
-                         placeholder="Insira seu nome de usuário..." required>
-               </div>
                <div>
                     <label>Senha</label>
                     <input class="login-input" type="password" ng-model="user.senha1" placeholder="Insira sua nova senha..."
@@ -22,16 +12,6 @@
                <div>
                     <label>Repita a senha</label>
                     <input class="login-input" type="password" ng-model="user.senha2" placeholder="Repita sua nova senha..."
-                         required>
-               </div>
-               <div>
-                    <label>E-mail</label>
-                    <input class="login-input" type="email" ng-model="user.email" placeholder="Insira seu e-mail..."
-                         required>
-               </div>
-               <div>
-                    <label>Telefone</label>
-                    <input class="login-input" type="tel" ng-model="user.telefone" placeholder="Insira seu telefone..."
                          required>
                </div>
           </div>

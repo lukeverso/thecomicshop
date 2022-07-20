@@ -1,0 +1,22 @@
+<div ng-include="'views/header.html'"></div>
+<div ng-include="'views/footer.html'"></div>
+<div class="main-container" ng-controller="MinhasComprasController">
+     <div style="width: 70%; height: 100vh; margin: 0 auto; padding: 20px;">
+          <div style="display: flex; justify-content: space-between;">
+               <h1>
+                    Minhas compras
+               </h1>
+          </div>
+          <div style="padding-top: 20px;">
+               <ul style="list-style: none;" ng-repeat="pedido in pedidos">
+                    <li style="display: flex; justify-content: space-between; border: 1px solid #c9c9c9; border-radius: 10px; margin: 10px 0;">
+                         <div style="display: flex; align-items: center; margin-left: 20px; height: 80px;">
+                              <strong>
+                                   {{ pedido.nome }} • R$ {{ pedido.valor }} • {{ pedido.descricao }} • Vendido por: {{ pedido.vendedor }}
+                              </strong>
+                         </div>
+                    </li>
+               </ul>
+          </div>
+     </div>
+</div>

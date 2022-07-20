@@ -98,20 +98,23 @@ router.delete('/:id', async (req, res) => {
      }
 });
 
-router.put('/sold/:id', async (req, res) => {
-     const id = req.params.id;
-     try {
-          await Product.findByIdAndUpdate({
-               id: id,
-               update: {
-                    vendido: true
+router.put('/sold/:id', (req, res) => {
+     Product.findByIdAndUpdate(
+          req.params.id,
+          {
+               vendido: true,
+               vendidoPara: req.body.comprador
+          },
+          (err) => {
+               if (err) {
+                    res.send(err)
+               } else {
+                    res.status(200).json({
+                         message: 'Produto vendido.'
+                    })
                }
-          })
-     } catch (error) {
-          res.status(500).json({
-               error: error
-          })
-     }
+          }
+     )
 })
 
 module.exports = router;
